@@ -16,7 +16,7 @@ int main (){
                 i++;
                 printf("Exit? [Y/N]");
                 scanf(" %c", &exit);
-                if (exit == 'S'){
+                if (exit == 'Y'){
                         mean = num/i;
                 }
         }
