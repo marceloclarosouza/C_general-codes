@@ -14,7 +14,7 @@ int main()
         scanf("%f", &l2);
         printf("Digite o valor de l3 ");
         scanf("%f", &l3);
-        
+        // calcular o módulo da diferenças
         l1dif = l2-l3;
         l2dif = l1-l3;
         l3dif = l2-l3;
@@ -39,6 +39,8 @@ int main()
         else{
                 l3dif = l3dif;
         }
+        
+        // testar se os valores formam ou não um triângulo e o seu tipo
         
         if ((l1 < l2+l3) && (l2 < l1+l3) && (l3 < l1+l2)
                     && (l1 > l1dif) && (l2 > l2dif) && (l3 > l3dif)){
