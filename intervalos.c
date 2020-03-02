@@ -5,7 +5,7 @@
 int main() {
         
         int num;
-        printf("Digite um numero inteiro entre -100 e 100\n");
+        printf("\nDigite um numero inteiro entre -100 e 100\n");
         scanf("%d", & num);
         
         
