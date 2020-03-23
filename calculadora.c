@@ -2,14 +2,20 @@
 
 #include<stdio.h>
 
+void cabecalho (void)
+{
+        printf("***********************************\n");
+        printf("************ M E N U **************\n");
+        return;
+}
+
 int main () {
         int op;
         float num1, num2;
         
         do {
                 system("cls");
-                printf("********Calculadora********\n\n");
-                printf("***********MENU***********\n\n");
+                cabecalho();
                 printf("1 - adicao\n");
                 printf("2 - subtracao\n");
                 printf("3 - multiplicacao\n");
