@@ -17,7 +17,7 @@ void cabecalho (){
 void push (int *vet)
 {
     int fim = -1;
-    if (fim < (MAX -1){
+    if (fim < (MAX -1)){
         fim++;
         printf("Digite o numero que deseja adicionar\n");
         scanf("%d", &vet[fim]);
@@ -29,7 +29,7 @@ void push (int *vet)
 }
 
 void pop (int *vet)
-{   
+{
     int fim;
 
     if (fim >= 0){
@@ -44,17 +44,16 @@ void pop (int *vet)
 
 void mostra (int *vet)
 {
-    int i;
+    int i, fim;
 
     if (fim >=0){
         for (i = 0; i <= fim; i++)
-            printf("%d\t", vet[i]);
+            printf("%d\t", &vet[i]);
     }
     else
     {
         printf("Vetor vazio!!!\n");
-    }    
-
+    }
 }
 
 int main ()
@@ -63,7 +62,7 @@ int main ()
 
     do {
         system("cls");
-        cabecalho()
+        cabecalho();
         printf("\n1 - Inserir");
         printf("\n2 - Retirar");
         printf("\n3 - Mostrar");
@@ -72,25 +71,24 @@ int main ()
 
             switch (op){
 
-                case 1: push(&vet);
-                        printf("Adicionado com sucesso\n")
+                case 1: syatem("cls");
+                        push(&vet);
+                        printf("Adicionado com sucesso\n");
                         system ("pause");
                         break;
 
-                case 2: pop(&vet);
+                case 2: syatem("cls");
+                        pop(&vet);
                         printf("Removido com sucesso\n");
                         system("pause");
                         break;
 
-                case 3: mostra(&vet);
-                        printf("%d", vet);
+                case 3: syatem("cls");
+                        mostra(&vet);
                         system("pause");
-                        break;
-
- 
+                        break; 
             }
 
     } while(op!=9);
-
     return 0;
 }
