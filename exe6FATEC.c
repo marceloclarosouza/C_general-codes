@@ -8,19 +8,26 @@ funções solicitadas neste exercício.).*/
 #include<stdlib.h>
 #define MAX 10
 
-void cabecalho (){
+void cabecalho ()
+{
     printf("************************************************\n");
     printf("                    M E N U                     \n");
     printf("************************************************\n");
 }
 
-void push (int *vet, int *fim)
+void rodape ()
 {
-    if (*fim < (MAX -1))
+    printf("************************************************\n");
+    printf("************************************************\n");
+}
+
+void push (int *vet, int fim)
+{
+    if (fim < (MAX -1))
     {
-        *fim++;
+        fim++;
         printf("Digite o numero que deseja adicionar\n");
-        scanf("%d", &vet[*fim]);
+        scanf("%d", &vet[fim]);
     }
     else
     {
@@ -28,10 +35,10 @@ void push (int *vet, int *fim)
     }
 }
 
-void pop (int *vet, int *fim)
+void pop (int vet, int fim)
 {
-    if (*fim >= 0){
-        *fim--;
+    if (fim >= 0){
+        fim--;
         printf("Removido com sucesso!\n");
     }
     else
@@ -40,12 +47,12 @@ void pop (int *vet, int *fim)
     }
 }
 
-void mostra (int *vet, int *fim)
+void mostra (int *vet, int fim)
 {
     int i;
 
-    if (*fim >=0){
-        for (i = 0; i <= *fim; i++)
+    if (fim >=0){
+        for (i = 0; i <= fim; i++)
             printf("%d\t", &vet[i]);
     }
     else
@@ -65,24 +72,26 @@ int main ()
         printf("\n2 - Retirar\n");
         printf("\n3 - Mostrar\n");
         printf("\n9 - Sair\n");
+        rodape();
         scanf("%d", &op);
+        
 
             switch (op){
 
                 case 1: system("cls");
-                        push(&vet, &fim);
+                        push(&vet, fim);
                         printf("Adicionado com sucesso\n");
                         system ("pause");
                         break;
 
                 case 2: system("cls");
-                        pop(&vet, &fim);
+                        pop(&vet, fim);
                         printf("Removido com sucesso\n");
                         system("pause");
                         break;
 
                 case 3: system("cls");
-                        mostra(&vet, &fim);
+                        mostra(&vet, fim);
                         system("pause");
                         break;
             }
