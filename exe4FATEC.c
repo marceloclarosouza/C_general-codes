@@ -24,8 +24,12 @@ void raizes (float a, float b, float c, float *x1, float *x2)
     }
     else if (delta > 0)
     {
-        *x1 = ((-b) + sqrt(delta/2*a));
-        *x2 = ((-b) - sqrt(delta/2*a));
+        *x1 = ((-b) + sqrt(delta))/(2*a);
+        *x2 = ((-b) - sqrt(delta))/(2*a);
+    }
+    else
+    {
+        printf("Esta equacao nao possui raizes reais\n");
     }
 }
 
@@ -41,10 +45,10 @@ int main ()
     scanf("%f", &c);
 
     Delta(a,b,c,&delt);
-    printf("Delta = %.1f", delt);
+    printf("Delta = %.1f\n", delt);
 
     raizes(a,b,c,&x1,&x2);
-    printf("Os valores de x1 = %.1f e x2 = %.1f", x1, x2);
+    printf("Os valores de x1 = %.1f e x2 = %.1f\n", x1, x2);
     system("pause");
     return 0;
 }
