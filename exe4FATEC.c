@@ -8,31 +8,30 @@ delta, o X1 e o X2. (utilize retorno vazio e passe os dados por referência)*/
 
 void *Delta (float a, float b, float c, float *delt)
 {
-    float delt;
     *delt = (b*b) - 4*a*c;
 }
 
-void raizes (float a, float b, float c)
+void raizes (float a, float b, float c, float *x1, float *x2)
 {
-    float delta, x1, x2;
+    float delta;
 
     delta = (b*b) -4*a*c;
 
     if (delta == 0)
     {
-        x1 = -b/(2*a);
-        x2 = -b/(2*a);
+        *x1 = -b/(2*a);
+        *x2 = -b/(2*a);
     }
     else if (delta > 0)
     {
-        x1 = ((-b) + sqrt(delta(a,b,c))/2*a);
-        x2 = ((-b) - sqrt(delta(a,b,c))/2*a);
+        *x1 = ((-b) + sqrt(delta/2*a));
+        *x2 = ((-b) - sqrt(delta/2*a));
     }
 }
 
 int main ()
 {
-    float a, b, c, raiz, delt;
+    float a, b, c, delt, x1, x2;
     system("cls");
     printf("Digite o valor de 'a'\n");
     scanf("%f", &a);
@@ -44,8 +43,8 @@ int main ()
     Delta(a,b,c,&delt);
     printf("Delta = %.1f", delt);
 
-    //raiz = &raizes(a,b,c);
-    //printf("Os valores de x1 e x2 sao %f", raiz);
+    raizes(a,b,c,&x1,&x2);
+    printf("Os valores de x1 = %.1f e x2 = %.1f", x1, x2);
     system("pause");
     return 0;
 }
