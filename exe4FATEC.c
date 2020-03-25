@@ -6,15 +6,13 @@ delta, o X1 e o X2. (utilize retorno vazio e passe os dados por referência)*/
 #include<math.h>
 
 
-void *Delta (float a, float b, float c)
+void *Delta (float a, float b, float c, float *delt)
 {
-    float delta;
-    delta = (b*b) - 4*a*c;
-    if (delta < 0)
-        printf("Delta negativo.\nEsta equacao nao possui raizes reais\n");
+    float delt;
+    *delt = (b*b) - 4*a*c;
 }
 
-void *raizes (float a, float b, float c)
+void raizes (float a, float b, float c)
 {
     float delta, x1, x2;
 
@@ -34,7 +32,7 @@ void *raizes (float a, float b, float c)
 
 int main ()
 {
-    float a, b, c, raiz, delta;
+    float a, b, c, raiz, delt;
     system("cls");
     printf("Digite o valor de 'a'\n");
     scanf("%f", &a);
@@ -43,11 +41,11 @@ int main ()
     printf("Digite o valor de 'c'\n");
     scanf("%f", &c);
 
-    delta = &Delta(a,b,c);
-    printf("Delta = %.1f", delta);
+    Delta(a,b,c,&delt);
+    printf("Delta = %.1f", delt);
 
-    raiz = &raizes(a,b,c);
-    printf("Os valores de x1 e x2 sao %f", raiz);
+    //raiz = &raizes(a,b,c);
+    //printf("Os valores de x1 e x2 sao %f", raiz);
     system("pause");
     return 0;
 }
