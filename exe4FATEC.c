@@ -30,6 +30,8 @@ void raizes (float a, float b, float c, float *x1, float *x2)
     else
     {
         printf("Esta equacao nao possui raizes reais\n");
+        *x1 = 000;
+        *x2 = 000;
     }
 }
 
