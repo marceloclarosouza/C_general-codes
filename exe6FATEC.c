@@ -16,14 +16,15 @@ void cabecalho (){
 
 void push (int *vet, int *fim)
 {
-    if (*fim < (MAX -1)){
+    if (*fim < (MAX -1))
+    {
         *fim++;
         printf("Digite o numero que deseja adicionar\n");
         scanf("%d", &vet[*fim]);
     }
     else
     {
-        printf("Impossivel inserir!\nVetor cheio!");
+        printf("Impossivel inserir!\nVetor cheio!\n");
     }
 }
 
@@ -31,7 +32,7 @@ void pop (int *vet, int *fim)
 {
     if (*fim >= 0){
         *fim--;
-        printf("Removido com sucesso!");
+        printf("Removido com sucesso!\n");
     }
     else
     {
@@ -83,7 +84,7 @@ int main ()
                 case 3: system("cls");
                         mostra(&vet, &fim);
                         system("pause");
-                        break; 
+                        break;
             }
 
     } while(op!=9);
