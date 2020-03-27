@@ -8,6 +8,9 @@ funções solicitadas neste exercício.).*/
 #include<stdlib.h>
 #define MAX 10
 
+int vet[MAX];
+int fim = -1;
+
 void cabecalho ()
 {
     printf("************************************************\n");
@@ -21,12 +24,13 @@ void rodape ()
     printf("************************************************\n");
 }
 
-void push (int *vet, int fim)
+void push (int vet, int fim)
 {
+    
     if (fim < (MAX -1))
     {
         fim++;
-        printf("Digite o numero que deseja adicionar\n");
+        printf("Digite o numero que deseja adicionar:\n");
         scanf("%d", &vet[fim]);
     }
     else
@@ -39,7 +43,6 @@ void pop (int vet, int fim)
 {
     if (fim >= 0){
         fim--;
-        printf("Removido com sucesso!\n");
     }
     else
     {
@@ -47,11 +50,11 @@ void pop (int vet, int fim)
     }
 }
 
-void mostra (int *vet, int fim)
+void mostra (int vet, int fim)
 {
     int i;
 
-    if (fim >=0){
+    if (*fim >=0){
         for (i = 0; i <= fim; i++)
             printf("%d\t", &vet[i]);
     }
@@ -63,7 +66,7 @@ void mostra (int *vet, int fim)
 
 int main ()
 {
-    int vet[MAX], fim = -1, i, op;
+    int vet[MAX], i, op, fim;
 
     do {
         system("cls");
@@ -79,19 +82,19 @@ int main ()
             switch (op){
 
                 case 1: system("cls");
-                        push(&vet, fim);
-                        printf("Adicionado com sucesso\n");
+                        push(vet, fim);
+                        printf("Adicionado com sucesso!\n");
                         system ("pause");
                         break;
 
                 case 2: system("cls");
-                        pop(&vet, fim);
-                        printf("Removido com sucesso\n");
+                        pop(vet, fim);
+                        printf("Removido com sucesso!\n");
                         system("pause");
                         break;
 
                 case 3: system("cls");
-                        mostra(&vet, fim);
+                        mostra(vet, fim);
                         system("pause");
                         break;
             }
