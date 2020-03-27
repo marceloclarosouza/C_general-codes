@@ -8,8 +8,6 @@ funções solicitadas neste exercício.).*/
 #include<stdlib.h>
 #define MAX 10
 
-int vet[MAX];
-int fim = -1;
 
 void cabecalho ()
 {
@@ -24,14 +22,12 @@ void rodape ()
     printf("************************************************\n");
 }
 
-void push (int vet, int fim)
+void push ()
 {
-    
+    int fim;
     if (fim < (MAX -1))
     {
         fim++;
-        printf("Digite o numero que deseja adicionar:\n");
-        scanf("%d", &vet[fim]);
     }
     else
     {
@@ -39,8 +35,9 @@ void push (int vet, int fim)
     }
 }
 
-void pop (int vet, int fim)
+void pop ()
 {
+    int fim;
     if (fim >= 0){
         fim--;
     }
@@ -50,11 +47,11 @@ void pop (int vet, int fim)
     }
 }
 
-void mostra (int vet, int fim)
+void mostra ()
 {
-    int i;
+    int i, fim, vet[MAX];
 
-    if (*fim >=0){
+    if (fim >=0){
         for (i = 0; i <= fim; i++)
             printf("%d\t", &vet[i]);
     }
@@ -66,7 +63,7 @@ void mostra (int vet, int fim)
 
 int main ()
 {
-    int vet[MAX], i, op, fim;
+    int vet[MAX], op, fim = -1;
 
     do {
         system("cls");
@@ -82,19 +79,21 @@ int main ()
             switch (op){
 
                 case 1: system("cls");
-                        push(vet, fim);
-                        printf("Adicionado com sucesso!\n");
+                        push();
+                        printf("Digite o numero que deseja adicionar:\n");
+                        scanf("%d", &vet[fim]);
+                        //printf("Adicionado com sucesso!\n");
                         system ("pause");
                         break;
 
                 case 2: system("cls");
-                        pop(vet, fim);
+                        pop();
                         printf("Removido com sucesso!\n");
                         system("pause");
                         break;
 
                 case 3: system("cls");
-                        mostra(vet, fim);
+                        mostra();
                         system("pause");
                         break;
             }
